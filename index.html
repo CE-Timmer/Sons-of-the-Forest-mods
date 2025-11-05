@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <body style="font-family:sans-serif;padding:2em;">
+    <h2>Spotify Token</h2>
+    <script>
+      const token = new URLSearchParams(location.hash.slice(1)).get("access_token");
+      if (token) {
+        document.body.innerHTML += `<p><strong>${token}</strong></p>`;
+        navigator.clipboard?.writeText(token);
+      } else {
+        document.body.innerHTML += "<p>No token found.</p>";
+      }
+    </script>
+  </body>
+</html>
